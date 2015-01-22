@@ -104,6 +104,12 @@ bool Reader::ReadNextEvent()
 void Reader::Rewind() noexcept
 {
     curTreeNameIt = treeNames.begin();
+    
+    // Delete the current tree. It must be done during the rewind because if there is only single
+    //tree in the sample, the GetTree will try to reset curTree to the same pointer, and it will
+    //lead to a segfault
+    curTree.reset();
+    
     GetTree(*curTreeNameIt);
 }
 
