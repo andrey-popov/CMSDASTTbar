@@ -6,7 +6,7 @@ To get started, initialise a read-only copy of the repository, checkout the reco
 ```
 git clone https://github.com/andrey-popov/CMSDASTTbar.git
 cd CMSDASTTbar/
-git checkout 1.1
+git checkout 1.2
 source env.sh
 ```
 The environment should be set up each time you log in.
